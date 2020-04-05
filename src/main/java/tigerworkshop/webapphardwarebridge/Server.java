@@ -76,8 +76,7 @@ public class Server {
                 bridgeWebSocketServer.setConnectionLostTimeout(3);
                 settingService.setIsSigned(false);
 //                server.setIsSigned(false);
-//                ThreadManipulate(settingService.AllDevices());
-//                settingService.AllDevices();
+                ThreadManipulate(settingService.AllDevices());
 
                 new Timer().scheduleAtFixedRate(new TimerTask(){
                     @Override
@@ -93,8 +92,6 @@ public class Server {
                         catch(Exception c){c.printStackTrace();}
                     }
                 },0,3000);
-                Thread test = new testOmid();
-                   test.start();
 
                 // Add Serial Services
 //                HashMap<String, String> serials = setting.getSerials();
@@ -115,7 +112,6 @@ public class Server {
                     cloudProxyClientWebSocketService.setServer(bridgeWebSocketServer);
                     cloudProxyClientWebSocketService.start();
                 }
-
                 // WSS/TLS Options
                 if (setting.getTLSEnabled()) {
                     if (setting.getTLSSelfSigned()) {
@@ -125,7 +121,6 @@ public class Server {
                     }
                     bridgeWebSocketServer.setWebSocketFactory(TLSUtil.getSecureFactory(setting.getTLSCert(), setting.getTLSKey(), setting.getTLSCaBundle()));
                 }
-
                 // Start WebSocket Server
 //                bridgeWebSocketServer.start();
 
@@ -179,7 +174,7 @@ public class Server {
                     break;
                 case "sysmex":
                     Thread sys = new sysmex(port,path,threadNumber, equipmentId);
-                    sys.start();
+//                    sys.start();
                     break;
                 case "BS480":
                     Thread BS480 = new BS480Server(port,path,threadNumber,equipmentId);
@@ -204,17 +199,19 @@ public class Server {
                     break;
                 case "Barcode":
                     Thread bar = new getBarcodesFromServer(port,path,threadNumber, settingService.equipmentIds());
-                    bar.start();
+//                    bar.start();
                     break;
                 case "Picsender":
-//                    Thread pic = new picSender(port, path, source, threadNumber);
+                    Thread pic = new picSender(port, path, source, threadNumber);
 //                    pic.start();
+                    break;
+                case "Electro":
+                    Thread test = new testOmid(path,threadNumber,equipmentId,source);
+                    test.start();
                     break;
             }
         }
         Thread ServerSender = new ServerSender();
-        ServerSender.start();
-//        Thread tcp = new TCPport();
-//        tcp.start();
+//        ServerSender.start();
     }
 }
