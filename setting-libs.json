@@ -1,0 +1,27 @@
+{
+  "address": "127.0.0.1",
+  "bind": "127.0.0.1",
+  "port": 12213,
+  "fallbackToDefaultPrinter": false,
+  "authentication": {
+    "enabled": false,
+    "token": ""
+  },
+  "tls": {
+    "enabled": false,
+    "selfSigned": true,
+    "cert": "tls/default-cert.pem",
+    "key": "tls/default-key.pem"
+  },
+  "cloudProxy": {
+    "enabled": false,
+    "url": "wss://127.0.0.1:22213"
+  },
+  "printers": {
+    "LABEL": "KM-2001",
+    "INVOICE": "KM-2001"
+  },
+  "serials": {
+    "WEIGH": "COM2"
+  }
+}

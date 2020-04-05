@@ -1,0 +1,100 @@
+{
+  "address": "127.0.0.1",
+  "device_type": "device_type",
+  "simaServerUrl": "http://test.sajayanegar.ir:8080",
+  "simaPassword": "sima@110",
+  "simaUsername": "sima",
+  "equipmentIds": "100,200,100204",
+  "bind": "127.0.0.1",
+  "port": 12212,
+  "fallbackToDefaultPrinter": false,
+  "authentication": {
+    "enabled": false,
+    "token": ""
+  },
+  "tls": {
+    "selfSigned": true,
+    "cert": "tls/default-cert.pem",
+    "enabled": false,
+    "key": "tls/default-key.pem"
+  },
+  "cloudProxy": {
+    "enabled": false,
+    "url": "wss://127.0.0.1:22212",
+    "timeout": 30.0
+  },
+  "printers": {
+    "LABEL": "Foxit Reader PDF Printer",
+    "INVOICE": "Microsoft XPS Document Writer",
+    "RESPONSE": "KM-200"
+  },
+  "serials": {
+    "WEIGH": "COM1"
+  },
+  "devices": [
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/testResult",
+      "port": "5050",
+      "sourceFolder": "Not Set",
+      "name": "Hemato",
+      "deviceId": "1",
+      "equipmentId": "100"
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/testResult",
+      "port": "6060",
+      "sourceFolder": "Not Set",
+      "name": "Modular",
+      "deviceId": "2",
+      "equipmentId": "200"
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/testResult",
+      "port": "COM2",
+      "sourceFolder": "Not Set",
+      "name": "Immulite",
+      "deviceId": "3",
+      "equipmentId": "100204"
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/testResult",
+      "port": "COM4",
+      "sourceFolder": "Not Set",
+      "name": "CobasE411",
+      "deviceId": "4",
+      "equipmentId": "300"
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/testResult",
+      "port": "COM3",
+      "sourceFolder": "Not Set",
+      "name": "Abbott",
+      "deviceId": "5",
+      "equipmentId": "400"
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/testResult",
+      "port": "3060",
+      "sourceFolder": "Not Set",
+      "name": "BS480",
+      "deviceId": "6",
+      "equipmentId": "500"
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/RequiredDataPost",
+      "port": "5050",
+      "sourceFolder": "Not Set",
+      "name": "Barcode",
+      "deviceId": "7",
+      "equipmentId": "500"
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/storePicture",
+      "port": "5054",
+      "sourceFolder": "Not Set",
+      "name": "Picsender",
+      "deviceId": "8",
+      "equipmentId": "600"
+    }
+  ]
+}

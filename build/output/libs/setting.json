@@ -1,0 +1,76 @@
+{
+  "address": "127.0.0.1",
+  "device_type": "device_type",
+  "simaServerUrl": "http://test.sajayanegar.ir:8080",
+  "simaPassword": "sima@110",
+  "simaUsername": "sima",
+  "equipmentIds": "100204",
+  "bind": "127.0.0.1",
+  "port": 12212,
+  "fallbackToDefaultPrinter": false,
+  "authentication": {
+    "enabled": false,
+    "token": ""
+  },
+  "tls": {
+    "selfSigned": true,
+    "cert": "tls/default-cert.pem",
+    "enabled": false,
+    "key": "tls/default-key.pem"
+  },
+  "cloudProxy": {
+    "enabled": false,
+    "url": "wss://127.0.0.1:22212",
+    "timeout": 30.0
+  },
+  "printers": {
+    "LABEL": "NPI2ED04F (HP LaserJet Professional P 1102w)",
+    "INVOICE": "NPI2ED04F (HP LaserJet Professional P 1102w)",
+    "RESPONSE": "NPI2ED04F (HP LaserJet Professional P 1102w)"
+  },
+  "serials": {
+    "WEIGH": "COM1"
+  },
+  "devices": [
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/testResult",
+      "port": "5050",
+      "sourceFolder": "Not Set",
+      "name": "Hemato",
+      "deviceId": "1",
+      "equipmentId": "100204"
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/testResult",
+      "port": "6060",
+      "sourceFolder": "Not Set",
+      "name": "Modular",
+      "deviceId": "2",
+      "equipmentId": ""
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/parseSysmex",
+      "port": "COM3",
+      "sourceFolder": "Not Set",
+      "name": "sysmex",
+      "deviceId": "3",
+      "equipmentId": ""
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/RequiredDataPost",
+      "port": "5050",
+      "sourceFolder": "Not Set",
+      "name": "Barcode",
+      "deviceId": "4",
+      "equipmentId": ""
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/storePicture",
+      "port": "5054",
+      "sourceFolder": "Not Set",
+      "name": "Picsender",
+      "deviceId": "5",
+      "equipmentId": ""
+    }
+  ]
+}

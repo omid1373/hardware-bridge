@@ -1,0 +1,58 @@
+{
+  "address": "127.0.0.1",
+  "bind": "127.0.0.1",
+  "port": 12212,
+  "fallbackToDefaultPrinter": false,
+  "authentication": {
+    "enabled": false,
+    "token": ""
+  },
+  "tls": {
+    "enabled": false,
+    "selfSigned": true,
+    "cert": "tls/default-cert.pem",
+    "key": "tls/default-key.pem"
+  },
+  "cloudProxy": {
+    "enabled": false,
+    "url": "wss://127.0.0.1:22212"
+  },
+  "printers": {
+    "LABEL": "KM-200",
+    "INVOICE": "KM-200",
+    "RESPONSE": "KM-200"
+  },
+  "serials": {
+    "WEIGH": "COM5"
+  },
+  "devices": [
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/testResult",
+      "port": "3050",
+      "sourceFolder": "Not Set",
+      "name": "Hemato",
+      "deviceId": "1"
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/testResult",
+      "port": "3060",
+      "sourceFolder": "Not Set",
+      "name": "Modular",
+      "deviceId": "2"
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/RequiredData",
+      "port": "5050",
+      "sourceFolder": "Not Set",
+      "name": "Barcode",
+      "deviceId": "3"
+    },
+    {
+      "path": "/rest/s1/simaEquipmentInterOperation/storePicture",
+      "port": "5051",
+      "sourceFolder": "Not Set",
+      "name": "Picsender",
+      "deviceId": "4"
+    }
+  ]
+}

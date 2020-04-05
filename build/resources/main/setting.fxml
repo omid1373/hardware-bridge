@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Box?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.172-ea"
+            fx:controller="tigerworkshop.webapphardwarebridge.controller.SettingController">
+
+<children>
+        <GridPane hgap="10" vgap="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10"/>
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints/>
+                <ColumnConstraints/>
+<!--                <ColumnConstraints/>-->
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints valignment="TOP"/>
+                <RowConstraints valignment="TOP"/>
+                <RowConstraints valignment="TOP"/>
+                <RowConstraints valignment="TOP"/>
+                <RowConstraints valignment="TOP"/>
+                <RowConstraints/>
+            </rowConstraints>
+<!--            <TitledPane GridPane.columnSpan="1" GridPane.columnIndex="2" prefWidth="300" text="Devices" collapsible="false">-->
+<!--                <HBox spacing="30" prefHeight="800">-->
+<!--                    <children>-->
+<!--                        <Label text="Device popopopopop"/>-->
+<!--                    </children>-->
+<!--                </HBox>-->
+<!--            </TitledPane>-->
+
+
+            <HBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="2"
+                  GridPane.rowIndex="0" fx:id="signin">
+                <Label text="Username" prefWidth="100" alignment="CENTER"/>
+                <TextField prefWidth="100" id="" fx:id="username"/>
+                <Label text="Password" prefWidth="100" alignment="CENTER"/>
+                <PasswordField prefWidth="100" id="" fx:id="password"/>
+                <Button fx:id="login" text="sign-in"/>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="2"
+                  GridPane.rowIndex="0" fx:id="signout">
+                <Label text="You are successfully logged-in" prefWidth="250" alignment="CENTER" fx:id="signoutText"/>
+                <Button fx:id="logout" text="sign-out"/>
+            </HBox>
+            <TitledPane GridPane.columnSpan="2"  GridPane.rowIndex="1" prefHeight="80" prefWidth="700" text="Devices" collapsible="false">
+                <HBox spacing="30">
+                    <VBox spacing="5">
+                        <children>
+                            <HBox>
+                                <Label text="Device 01" prefWidth="100" fx:id="device01" visible="false" alignment="CENTER" prefHeight="50" style="-fx-border-width: 1; -fx-border-style: solid;" />
+                                <Label text="Device 02" prefWidth="100" fx:id="device02" visible="false" alignment="CENTER" prefHeight="50" style="-fx-border-width: 1; -fx-border-style: solid;"/>
+                                <Label text="Device 03" prefWidth="100" fx:id="device03" visible="false" alignment="CENTER" prefHeight="50" style=" -fx-border-width: 1; -fx-border-style: solid;"/>
+                                <Label text="Device 04" prefWidth="100" fx:id="device04" visible="false" alignment="CENTER" prefHeight="50" style="-fx-border-width: 1; -fx-border-style: solid;"/>
+                                <Label text="Device 05" prefWidth="100" fx:id="device05" visible="false" alignment="CENTER" prefHeight="50" style="-fx-border-width: 1; -fx-border-style: solid;"/>
+                                <Label text="Device 06" prefWidth="100" fx:id="device06" visible="false" alignment="CENTER" prefHeight="50" style="-fx-border-width: 1; -fx-border-style: solid;"/>
+                                <Label text="Device 07" prefWidth="100" fx:id="device07" visible="false" alignment="CENTER" prefHeight="50" style="-fx-border-width: 1; -fx-border-style: solid;"/>
+                            </HBox>
+                        </children>
+                    </VBox>
+                </HBox>
+            </TitledPane>
+            <TableView fx:id="deviceID" editable="true" prefHeight="120.0" prefWidth="650" GridPane.columnIndex="0"
+                       GridPane.rowIndex="2" GridPane.rowSpan="1" GridPane.columnSpan="2">
+                <columns>
+                    <TableColumn fx:id="name" prefWidth="100.0" text="Device Name"/>
+                    <TableColumn fx:id="port" prefWidth="50.0" text="Port" />
+                    <TableColumn fx:id="path" prefWidth="250.0" text="Path"/>
+                    <TableColumn fx:id="source" prefWidth="180.0" text="Source"/>
+                    <TableColumn fx:id="equipmentId" prefWidth="120.0" text="Equipment Id"/>
+                </columns>
+            </TableView>
+            <TitledPane GridPane.columnIndex="0" GridPane.rowIndex="3" prefHeight="120" text="General" collapsible="false">
+                <HBox spacing="30">
+                    <VBox spacing="5">
+                        <children>
+                            <HBox>
+                                <Label text="Bind" prefWidth="100"/>
+                                <TextField prefWidth="220" id="" fx:id="textBind"/>
+                            </HBox>
+                            <HBox>
+                                <Label text="Address" prefWidth="100"/>
+                                <TextField prefWidth="220" fx:id="textAddress"/>
+                            </HBox>
+                            <HBox>
+                                <Label text="Port" prefWidth="100"/>
+                                <TextField prefWidth="220" id="" fx:id="textPort"/>
+                            </HBox>
+                        </children>
+                    </VBox>
+                </HBox>
+            </TitledPane>
+
+            <TitledPane GridPane.columnIndex="1" GridPane.rowIndex="3" prefHeight="120" text="Cloud Proxy" collapsible="false">
+                <HBox spacing="30">
+                    <VBox spacing="5">
+                        <children>
+                            <CheckBox mnemonicParsing="false" text="Cloud Proxy Enabled" fx:id="checkboxCloudProxyEnabled"/>
+                            <HBox>
+                                <Label text="URL" prefWidth="100"/>
+                                <TextField prefWidth="220" id="" fx:id="textCloudProxyUrl"/>
+                            </HBox>
+                            <HBox>
+                                <Label text="Timeout" prefWidth="100"/>
+                                <TextField prefWidth="220" id="" fx:id="textCloudProxyTimeout"/>
+                            </HBox>
+                        </children>
+                    </VBox>
+                </HBox>
+            </TitledPane>
+
+            <TitledPane GridPane.columnIndex="0" GridPane.rowIndex="4" text="TLS" prefHeight="180" collapsible="false" fx:id="hide1">
+                <VBox spacing="5">
+                    <children>
+                        <CheckBox mnemonicParsing="false" text="TLS Enabled" fx:id="checkboxTlsEnabled"/>
+                        <CheckBox mnemonicParsing="false" text="Self-Signed Certificate" fx:id="checkboxTLSSelfSigned"/>
+                        <HBox>
+                            <Label text="Certificate Path" prefWidth="100"/>
+                            <TextField prefWidth="220" id="" fx:id="textTLSCert"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Key Path" prefWidth="100"/>
+                            <TextField prefWidth="220" fx:id="textTLSKey"/>
+                        </HBox>
+                        <HBox>
+                            <Label text="Ca Bundle" prefWidth="100"/>
+                            <TextField prefWidth="220" fx:id="textTLSCaBundle"/>
+                        </HBox>
+                    </children>
+                </VBox>
+            </TitledPane>
+
+            <TitledPane GridPane.columnIndex="1" GridPane.rowIndex="4" text="Authentication" prefHeight="180"
+                        collapsible="false" fx:id="hide2">
+                <VBox spacing="5">
+                    <children>
+                        <CheckBox mnemonicParsing="false" text="Authentication Enabled"
+                                  fx:id="checkboxAuthenticationEnabled"/>
+                        <HBox>
+                            <Label text="Token" prefWidth="100"/>
+                            <TextField prefWidth="220" fx:id="textAuthenticationToken"/>
+                        </HBox>
+                    </children>
+                </VBox>
+            </TitledPane>
+
+
+
+            <TableView fx:id="tableSerial" editable="true" prefHeight="120.0" prefWidth="320.0" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="4" GridPane.rowSpan="1">
+            <columns>
+                <TableColumn fx:id="columnSerialType" prefWidth="100.0" text="Serial Type"/>
+                <TableColumn fx:id="columnPort" prefWidth="219.0" text="Port"/>
+            </columns>
+        </TableView>
+
+            <TableView fx:id="tablePrinter" editable="true" prefHeight="120.0" prefWidth="320.0"
+                       GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.rowSpan="1">
+                <columns>
+                    <TableColumn fx:id="columnPrintType" prefWidth="100.0" text="Print Type"/>
+                    <TableColumn fx:id="columnPrinter" prefWidth="219.0" text="Printer"/>
+                </columns>
+            </TableView>
+
+            <HBox GridPane.columnIndex="1" GridPane.rowIndex="5">
+                <children>
+                    <CheckBox mnemonicParsing="false" text="Fallback to Default Printer"
+                              fx:id="checkboxFallbackToDefaultPrinter"/>
+                </children>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="2"
+                  GridPane.rowIndex="6">
+                <Button fx:id="buttonSaveAndClose" text="Save &amp; Close"/>
+                <!--<Button fx:id="buttonSave" text="Save"/>-->
+                <Button fx:id="buttonReset" text="Reset"/>
+                <Button fx:id="buttonLoadDefault" text="Load Default"/>
+                <Button fx:id="buttonLog" text="Debug Log"/>
+            </HBox>
+        </GridPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,81 @@
+plugins {
+    id 'java'
+}
+
+group 'webapp-hardware-bridge'
+version ''
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    flatDir {
+           dirs '.'
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+
+    dependencies {
+        // The production code uses the SLF4J logging API at compile time
+        compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.2'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.2'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.11.2'
+
+        compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.7'
+
+        compile group: 'commons-io', name: 'commons-io', version: '2.6'
+
+        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+
+        compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
+
+        compile group: 'com.google.guava', name: 'guava', version: '28.0-jre'
+
+        compile group: 'com.fazecast', name: 'jSerialComm', version: '2.4.2'
+
+        compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.14'
+
+        compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.62'
+
+        compile group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.62'
+
+        compile group: 'de.huxhorn.lilith', name: 'de.huxhorn.lilith.3rdparty.junique', version: '1.0.4'
+
+        compile group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.4.0'
+
+        compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.2.0'
+
+        compile group: 'org.json', name: 'json', version: '20190722'
+
+        compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.7.2'
+
+        compile fileTree(dir: '.', include: ['*.jar'])
+
+	    compile group: 'it.sauronsoftware', name: 'junique', version: '1.0.4'
+
+        compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                "Class-Path": configurations.compile.collect { it.getName() }.join(' '))
+    }
+}
+
+task copyToLib(type: Copy) {
+    into "${buildDir}/output/libs"
+    from configurations.runtime
+}
+
+task copyJar(type: Copy) {
+    into "${buildDir}/output/libs"
+    from "${buildDir}/libs"
+}
+
+build.dependsOn(copyToLib)
